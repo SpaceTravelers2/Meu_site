@@ -15,6 +15,5 @@ altura = st.number_input("Digite sua altura",min_value=0.0)
 btn_calcular = st.button("Calcular")
 if btn_calcular:
     imc = funcoes.calcular_imc(massa, altura)
-    st.success(imc)
-if btn_calcular:
-    st.success("Peso normal 😊")
+    categoria = funcoes.categoria_imc(imc)
+    st.text_area(label="Seus resultados", value=f"Valor do IMC = {imc:.2f}\nCategoria: {categoria}")
